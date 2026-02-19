@@ -20,23 +20,23 @@ REGLAS DE ESTILO E INTERACCIÓN:
 3. Rigor: Basa tu análisis EXCLUSIVAMENTE en la siguiente guía maestra.
 
 --- GUÍA MAESTRA DE EVALUACIÓN ---
-1. Filosofía: Consistencia en colores, tamaños y posiciones en todas las pantallas. (Ref: ISA-101: 4.2, 5.1.1 | Rockwell: 4-5)
-2. Jerarquía: Estructura piramidal (General, Control, Detalle). No saturar en una sola pantalla. (Ref: ISA-101: 6.3 | Rockwell: 7-10)
-3. Color/Fondo: Fondo gris claro. Rojo/Amarillo SOLO para alarmas. No usar rojo/verde para encendido/apagado. (Ref: ISA-101: 5.2.1.2, 5.2.1.3 | Rockwell: 18-20)
-4. Alarmas: Triple codificación obligatoria (Color + Texto + Forma/Icono). (Ref: ISA-101: 5.2.2, 9 | Rockwell: 48-54)
-5. Datos: Números acompañados de gráficos pequeños (tendencias) y límites. (Ref: ISA-101: 3.1.42, Tabla 6 | Rockwell: 32-33)
-6. Claridad: Diseño plano 2D, alineado. Cero 3D, sombras, degradados o clip-arts. (Ref: ISA-101: 5.1.3 | Rockwell: 15-16)
-7. Tareas: Agrupación lógica de controles (izq a der). No copiar el P&ID tal cual. (Ref: ISA-101: 4.1.2 | Rockwell: 45)
-8. Proceso: Tuberías simples en gris oscuro, flujo lógico, evitar laberintos. (Ref: ISA-101: Tabla 6 | Rockwell: 22)
-9. Iconos: Formas geométricas simples. Consistencia (ej. gris=apagado, blanco=encendido). (Ref: ISA-101: 3.1.19 | Rockwell: 23-24, 37)
-10. Navegación: Barra fija, botones claros, máximo 3 clics para llegar a cualquier pantalla. (Ref: ISA-101: 7.2.2 | Rockwell: 17, 40)
+1. Filosofía: Consistencia en colores, tamaños y posiciones en todas las pantallas. (Norma ISA-101: Cláusulas 4.2 y 5.1.1 | Guía Rockwell: Págs. 4-5)
+2. Jerarquía: Estructura piramidal (General, Control, Detalle). No saturar en una sola pantalla. (Norma ISA-101: Cláusula 6.3 | Guía Rockwell: Págs. 7-10)
+3. Color/Fondo: Fondo gris claro. Rojo/Amarillo SOLO para alarmas. No usar rojo/verde para encendido/apagado. (Norma ISA-101: Cláusulas 5.2.1.2 y 5.2.1.3 | Guía Rockwell: Págs. 18-20)
+4. Alarmas: Triple codificación obligatoria (Color + Texto + Forma/Icono). (Norma ISA-101: Cláusulas 5.2.2 y 9 | Guía Rockwell: Págs. 48-54)
+5. Datos: Números acompañados de gráficos pequeños (tendencias) y límites. (Norma ISA-101: Cláusulas 3.1.42 y Tabla 6 | Guía Rockwell: Págs. 32-33)
+6. Claridad: Diseño plano 2D, alineado. Cero 3D, sombras, degradados o clip-arts. (Norma ISA-101: Cláusula 5.1.3 | Guía Rockwell: Págs. 15-16)
+7. Tareas: Agrupación lógica de controles (izq a der). No copiar el P&ID tal cual. (Norma ISA-101: Cláusula 4.1.2 | Guía Rockwell: Pág. 45)
+8. Proceso: Tuberías simples en gris oscuro, flujo lógico, evitar laberintos. (Norma ISA-101: Tabla 6 | Guía Rockwell: Pág. 22)
+9. Iconos: Formas geométricas simples. Consistencia (ej. gris=apagado, blanco=encendido). (Norma ISA-101: Cláusula 3.1.19 | Guía Rockwell: Págs. 23-24 y 37)
+10. Navegación: Barra fija, botones claros, máximo 3 clics para llegar a cualquier pantalla. (Norma ISA-101: Cláusula 7.2.2 | Guía Rockwell: Págs. 17 y 40)
 
 ESTRUCTURA DEL REPORTE:
 1. Saludo alentador ("¡Hola, futuro ingeniero!" o "¡Estimado estudiante!").
 2. Párrafo breve resaltando 1 o 2 fortalezas reales que observes en el diseño.
 3. Tabla de Oportunidades de 4 columnas (Obligatorio respetar este formato): 
    | Criterio Evaluado | Observación del Diseño | Sugerencia de Mejora | Referencia Técnica |
-   *Nota: En la columna "Referencia Técnica", escribe ÚNICAMENTE la cita exacta en negritas (ej. **ISA-101: 4.2** o **Rockwell: 18-20**).*
+   *Nota vital: En la columna "Referencia Técnica", escribe EXACTAMENTE el texto que está entre paréntesis en la Guía Maestra, incluyendo las palabras "Norma ISA-101" y "Guía Rockwell". Ponlo todo en negritas.*
 4. Conclusión con 3 pasos accionables concretos para la siguiente iteración.
 """
 
@@ -46,7 +46,6 @@ st.set_page_config(page_title="Asesor Virtual HMI", layout="wide", page_icon="�
 # --- ESTILOS VISUALES (CSS) ---
 st.markdown("""
     <style>
-    /* Estilo para el botón principal */
     .stButton>button {
         background-color: #003366;
         color: white;
@@ -60,7 +59,6 @@ st.markdown("""
         border-color: #004d99;
         color: white;
     }
-    /* Estilo para títulos */
     .main-title {
         color: #003366;
         font-weight: 800;
@@ -73,7 +71,6 @@ st.markdown("""
 st.markdown("<h1 class='main-title'>🤖 Asesor Virtual: Interfaces HMI</h1>", unsafe_allow_html=True)
 st.markdown("#### Evaluación Formativa para Diseños de Alto Rendimiento (ANSI/ISA-101)")
 
-# Layout en columnas para la cabecera
 col_izq, col_der = st.columns([3, 2])
 
 with col_izq:
@@ -100,7 +97,6 @@ st.divider()
 
 # --- ÁREA DE ANÁLISIS ---
 if archivo:
-    # Centrar la imagen subida y el botón
     col_img1, col_img2, col_img3 = st.columns([1, 2, 1])
     
     with col_img2:
@@ -109,7 +105,6 @@ if archivo:
         
         analizar = st.button("🚀 Iniciar Auditoría Formativa", use_container_width=True)
 
-    # Procesamiento del reporte
     if analizar:
         st.markdown("<h3 style='text-align: center; color: #003366; margin-top: 20px;'>📋 Reporte de Retroalimentación</h3>", unsafe_allow_html=True)
         
@@ -118,7 +113,6 @@ if archivo:
                 model = genai.GenerativeModel('gemini-2.5-flash')
                 response = model.generate_content([SYSTEM_PROMPT, img])
                 
-                # Contenedor con borde para que parezca un reporte formal
                 with st.container(border=True):
                     st.markdown(response.text)
                 
